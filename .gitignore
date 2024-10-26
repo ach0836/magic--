@@ -1,2 +1,7 @@
 /.env
 magic-438603-62aee752a772.json
+build
+dist
+magic.spec
+app.log
+voice_input.wav
