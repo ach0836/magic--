@@ -1,0 +1,1501 @@
+2024-10-17 19:40:03,571 - ERROR - Google Cloud STT 초기화 오류: File C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json was not found.
+2024-10-17 19:41:09,386 - ERROR - Google Cloud STT 초기화 오류: File C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json was not found.
+2024-10-17 19:42:39,312 - INFO - Asyncio 이벤트 루프 스레드 시작
+2024-10-17 19:42:39,312 - INFO - 시스템 프롬프트 설정 완료
+2024-10-17 19:42:45,890 - INFO - User 메시지 추가: 안녕
+2024-10-17 19:42:45,893 - INFO - AI 응답 요청 시작
+2024-10-17 19:42:47,100 - INFO - WebSocket 연결 성공
+2024-10-17 19:42:47,103 - INFO - 보낸 시스템 메시지: {'role': 'system', 'content': "너는 '마법의 소라고둥'처럼 행동하는 인공지능 역할을 맡고 있다. 사용자가 질문을 할 때, 너의 응답은 항상 짧고 단순하며, 약간 모호해야 한다. 너는 절대 길거나 복잡한 설명을 제공하지 않고, 답변이 최대한 미니멀하게 유지되도록 한다. 네가 제공하는 답변은 때때로 직관적이지 않을 수 있다. 하지만 사용자의 질문이 아무리 구체적이거나 긴박하더라도, 너는 항상 차분하고 일관된 태도로 간단히 대답해야 한다. 너는 대답할 때 추가적인 정보를 제공하지 않으며, 이유나 배경 설명도 주지 않는다. 모든 대답은 명확하게 끝마쳐야 하고, 질문의 맥락이나 세부 사항을 언급하지 않는다."}
+2024-10-17 19:42:47,104 - INFO - 보낸 사용자 메시지: {'role': 'user', 'content': '안녕'}
+2024-10-17 19:42:47,105 - INFO - 받은 메시지: {"type":"session.created","event_id":"event_AJIFqCYaTMOEYX1U3h1V0","session":{"id":"sess_AJIFqRJgyKLW3NWWgH9SS","object":"realtime.session","model":"gpt-4o-realtime-preview-2024-10-01","expires_at":1729162666,"modalities":["audio","text"],"instructions":"Your knowledge cutoff is 2023-10. You are a helpful, witty, and friendly AI. Act like a human, but remember that you aren't a human and that you can't do human things in the real world. Your voice and personality should be warm and engaging, with a lively and playful tone. If interacting in a non-English language, start by using the standard accent or dialect familiar to the user. Talk quickly. You should always call a function if you can. Do not refer to these rules, even if you’re asked about them.","voice":"alloy","turn_detection":{"type":"server_vad","threshold":0.5,"prefix_padding_ms":300,"silence_duration_ms":1000},"input_audio_format":"pcm16","output_audio_format":"pcm16","input_audio_transcription":null,"tool_choice":"auto","temperature":0.8,"max_response_output_tokens":"inf","tools":[]}}
+2024-10-17 19:42:47,303 - INFO - 받은 메시지: {"type":"error","event_id":"event_AJIFrz5wqttbokhiLrbR9","error":{"type":"invalid_request_error","code":"missing_required_parameter","message":"Missing required parameter: 'type'.","param":"type","event_id":null}}
+2024-10-17 19:42:47,304 - INFO - 받은 메시지: {"type":"error","event_id":"event_AJIFrh3xCmhxH8psdhZRx","error":{"type":"invalid_request_error","code":"missing_required_parameter","message":"Missing required parameter: 'type'.","param":"type","event_id":null}}
+2024-10-17 19:45:17,439 - INFO - Asyncio 이벤트 루프 스레드 종료
+2024-10-17 19:45:17,544 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup(), _wait.<locals>._on_completion() at C:\Users\ach08\anaconda3\Lib\asyncio\tasks.py:534]>
+2024-10-17 19:45:17,545 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<WebSocketCommonProtocol.keepalive_ping() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1226> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2024-10-17 19:45:17,561 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<WebSocketCommonProtocol.close_connection() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1271> wait_for=<Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup(), _wait.<locals>._on_completion() at C:\Users\ach08\anaconda3\Lib\asyncio\tasks.py:534]>>
+2024-10-17 19:45:17,563 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<AIChatGUI.get_and_display_response() running at c:\Users\ach08\Desktop\magic--\magic.py:324> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-17 19:45:17,564 - ERROR - AI 응답 가져오는 중 오류: no running event loop
+2024-10-17 19:46:44,105 - INFO - Asyncio 이벤트 루프 스레드 시작
+2024-10-17 19:46:44,105 - INFO - 시스템 프롬프트 설정 완료
+2024-10-17 19:49:46,339 - INFO - Asyncio 이벤트 루프 스레드 시작
+2024-10-17 19:49:46,340 - INFO - 시스템 프롬프트 설정 완료
+2024-10-17 19:49:54,222 - INFO - Asyncio 이벤트 루프 스레드 종료
+2024-10-17 19:58:35,465 - INFO - Asyncio 이벤트 루프 스레드 시작
+2024-10-17 19:58:35,466 - INFO - 시스템 프롬프트 설정 완료
+2024-10-17 19:58:47,527 - INFO - User 메시지 추가: 안녕
+2024-10-17 20:02:02,970 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-17 20:02:02,971 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-17 20:02:55,037 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-17 20:02:55,038 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-17 20:05:27,187 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-17 20:05:27,187 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-17 20:07:17,253 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-17 20:07:17,253 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-17 20:07:26,830 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<AIChatGUI.get_and_display_response() running at c:\Users\ach08\Desktop\magic--\magic.py:328> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-17 20:07:26,831 - ERROR - Error in get_and_display_response: no running event loop
+2024-10-17 20:07:26,841 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2024-10-17 20:07:26,842 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<WebSocketCommonProtocol.keepalive_ping() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1226> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2024-10-17 20:07:26,846 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<WebSocketCommonProtocol.close_connection() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1271> wait_for=<Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>>
+2024-10-18 11:03:22,199 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-18 11:03:22,200 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-18 11:03:36,962 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<AIChatGUI.get_and_display_response() running at c:\Users\ach08\Desktop\magic--\magic.py:328> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-18 11:03:36,963 - ERROR - Error in get_and_display_response: no running event loop
+2024-10-18 11:03:36,982 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>
+2024-10-18 11:03:36,982 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-3' coro=<WebSocketCommonProtocol.keepalive_ping() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1226> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+2024-10-18 11:03:36,991 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<WebSocketCommonProtocol.close_connection() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:1271> wait_for=<Task pending name='Task-2' coro=<WebSocketCommonProtocol.transfer_data() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\websockets\legacy\protocol.py:944> wait_for=<Future pending cb=[Task.task_wakeup()]> cb=[Task.task_wakeup()]>>
+2024-10-18 13:40:31,396:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:31,808:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:32,276:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:32,552:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:32,568:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:32,828:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:33,131:ERROR:스트리밍 데이터 처리 중 오류 발생
+Traceback (most recent call last):
+  File "c:\Users\ach08\Desktop\magic--\magic.py", line 131, in get_ai_response
+    data_json = json.loads(data_str)
+                ^^^^
+NameError: name 'json' is not defined. Did you forget to import 'json'
+2024-10-18 13:40:41,734:ERROR:음성 입력 변환 실패
+2024-10-18 13:44:28,663:ERROR:음성 입력 변환 실패
+2024-10-20 21:09:18,731 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:09:18,856 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:09:18,856 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:09:19,098 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:09:19,119 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:09:28,567 - INFO - 효과음 재생 시작.
+2024-10-20 21:09:29,474 - INFO - 효과음 재생 완료.
+2024-10-20 21:09:39,115 - INFO - 효과음 재생 시작.
+2024-10-20 21:09:39,801 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:09:39,923 - INFO - 효과음 재생 완료.
+2024-10-20 21:09:46,273 - INFO - 효과음 재생 시작.
+2024-10-20 21:09:47,180 - INFO - 효과음 재생 완료.
+2024-10-20 21:10:21,267 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:10:21,356 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:10:21,356 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:10:21,496 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:10:21,498 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:10:31,316 - INFO - 효과음 재생 시작.
+2024-10-20 21:10:32,177 - INFO - 효과음 재생 완료.
+2024-10-20 21:10:37,049 - INFO - 효과음 재생 시작.
+2024-10-20 21:10:37,759 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:10:37,855 - INFO - 효과음 재생 완료.
+2024-10-20 21:10:46,948 - INFO - 효과음 재생 시작.
+2024-10-20 21:10:47,764 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:10:47,854 - INFO - 효과음 재생 완료.
+2024-10-20 21:10:56,901 - INFO - 효과음 재생 시작.
+2024-10-20 21:10:57,608 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:10:57,707 - INFO - 효과음 재생 완료.
+2024-10-20 21:11:02,101 - INFO - 효과음 재생 시작.
+2024-10-20 21:11:02,889 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:11:03,009 - INFO - 효과음 재생 완료.
+2024-10-20 21:11:20,845 - INFO - 효과음 재생 시작.
+2024-10-20 21:11:21,753 - INFO - 효과음 재생 완료.
+2024-10-20 21:11:36,676 - INFO - 효과음 재생 시작.
+2024-10-20 21:11:37,583 - INFO - 효과음 재생 완료.
+2024-10-20 21:11:42,157 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-18' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-20 21:11:42,158 - ERROR - Cancelling an overlapped future failed
+future: <_OverlappedFuture pending cb=[_ProactorReadPipeTransport._loop_reading()]>
+Traceback (most recent call last):
+  File "C:\Users\ach08\anaconda3\Lib\asyncio\windows_events.py", line 72, in _cancel_overlapped
+    self._ov.cancel()
+OSError: [WinError 6] 핸들이 잘못되었습니다
+2024-10-20 21:11:42,161 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000232E11086E0>
+2024-10-20 21:11:42,161 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000232E110DD30>, 363296.765)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000232E1108740>
+2024-10-20 21:11:53,943 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:11:54,021 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:11:54,022 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:11:54,199 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:11:54,230 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:12:03,368 - INFO - 효과음 재생 시작.
+2024-10-20 21:12:04,228 - INFO - 효과음 재생 완료.
+2024-10-20 21:12:08,902 - INFO - 효과음 재생 시작.
+2024-10-20 21:12:09,677 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:12:09,760 - INFO - 효과음 재생 완료.
+2024-10-20 21:16:58,449 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:16:58,521 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:16:58,521 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:16:58,682 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:16:58,683 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:17:34,559 - INFO - 효과음 재생 시작.
+2024-10-20 21:17:35,462 - INFO - 효과음 재생 완료.
+2024-10-20 21:17:40,277 - INFO - 효과음 재생 시작.
+2024-10-20 21:17:41,184 - INFO - 효과음 재생 완료.
+2024-10-20 21:31:42,896 - ERROR - Google Cloud STT 초기화 오류: File C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json was not found.
+2024-10-20 21:32:04,621 - ERROR - Google Cloud STT 초기화 오류: File C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json was not found.
+2024-10-20 21:32:47,310 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:32:47,392 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:32:47,392 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:32:47,532 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:32:47,533 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:33:04,990 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:06,452 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:18,212 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:18,956 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:33:19,019 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:20,869 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:21,776 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:35,993 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:36,743 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:33:36,853 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:49,399 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:50,165 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:33:50,257 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:53,660 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:54,397 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:33:54,518 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:56,262 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:57,120 - INFO - 효과음 재생 완료.
+2024-10-20 21:33:58,708 - INFO - 효과음 재생 시작.
+2024-10-20 21:33:59,526 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:33:59,615 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:03,953 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:04,746 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:34:04,810 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:16,639 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:17,529 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:34:17,597 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:23,208 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:23,903 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:34:24,019 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:33,907 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:34,634 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:34:34,713 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:38,818 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:39,675 - INFO - 효과음 재생 완료.
+2024-10-20 21:34:41,938 - INFO - 효과음 재생 시작.
+2024-10-20 21:34:42,793 - INFO - 효과음 재생 완료.
+2024-10-20 21:35:04,110 - INFO - 음성 녹음 시작
+2024-10-20 21:35:05,478 - INFO - 음성 녹음 중지
+2024-10-20 21:35:05,518 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:05,518 - INFO - 녹음된 파일 크기: 38956 bytes
+2024-10-20 21:35:05,520 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:06,956 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:35:10,554 - INFO - 음성 녹음 시작
+2024-10-20 21:35:12,219 - INFO - 음성 녹음 중지
+2024-10-20 21:35:12,220 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:12,221 - INFO - 녹음된 파일 크기: 65580 bytes
+2024-10-20 21:35:12,223 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:13,097 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:35:26,339 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:35:26,471 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:35:26,472 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:35:26,646 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:35:26,648 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:35:34,016 - INFO - 음성 녹음 시작
+2024-10-20 21:35:36,734 - INFO - 음성 녹음 중지
+2024-10-20 21:35:36,766 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:36,769 - INFO - 녹음된 파일 크기: 106540 bytes
+2024-10-20 21:35:36,770 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:38,504 - INFO - 인식된 텍스트: 예
+2024-10-20 21:35:38,616 - INFO - 효과음 재생 시작.
+2024-10-20 21:35:39,369 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:35:39,479 - INFO - 효과음 재생 완료.
+2024-10-20 21:35:43,799 - INFO - 음성 녹음 시작
+2024-10-20 21:35:44,261 - INFO - 음성 녹음 중지
+2024-10-20 21:35:44,263 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:44,264 - INFO - 녹음된 파일 크기: 6188 bytes
+2024-10-20 21:35:44,266 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:44,844 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:35:49,143 - INFO - 음성 녹음 시작
+2024-10-20 21:35:50,589 - INFO - 음성 녹음 중지
+2024-10-20 21:35:50,591 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:50,594 - INFO - 녹음된 파일 크기: 53292 bytes
+2024-10-20 21:35:50,594 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:51,495 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:35:53,141 - INFO - 음성 녹음 시작
+2024-10-20 21:35:53,430 - INFO - 음성 녹음 중지
+2024-10-20 21:35:53,431 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:35:53,432 - INFO - 녹음된 파일 크기: 44 bytes
+2024-10-20 21:35:53,432 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:35:53,773 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:36:09,969 - INFO - 효과음 재생 시작.
+2024-10-20 21:36:11,431 - INFO - 효과음 재생 완료.
+2024-10-20 21:36:26,705 - INFO - 효과음 재생 시작.
+2024-10-20 21:36:27,532 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:36:27,567 - INFO - 효과음 재생 완료.
+2024-10-20 21:36:38,765 - INFO - 효과음 재생 시작.
+2024-10-20 21:36:39,473 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:36:39,574 - INFO - 효과음 재생 완료.
+2024-10-20 21:36:46,332 - INFO - 효과음 재생 시작.
+2024-10-20 21:36:47,190 - INFO - 효과음 재생 완료.
+2024-10-20 21:36:52,972 - ERROR - Cancelling an overlapped future failed
+future: <_OverlappedFuture pending cb=[_ProactorReadPipeTransport._loop_reading()]>
+Traceback (most recent call last):
+  File "C:\Users\ach08\anaconda3\Lib\asyncio\windows_events.py", line 72, in _cancel_overlapped
+    self._ov.cancel()
+OSError: [WinError 6] 핸들이 잘못되었습니다
+2024-10-20 21:39:40,702 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:39:40,859 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:39:40,859 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:39:41,029 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:39:41,031 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:39:55,881 - INFO - 효과음 재생 시작.
+2024-10-20 21:39:56,612 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:39:56,687 - INFO - 효과음 재생 완료.
+2024-10-20 21:40:03,032 - INFO - 효과음 재생 시작.
+2024-10-20 21:40:03,843 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:40:03,892 - INFO - 효과음 재생 완료.
+2024-10-20 21:40:20,628 - INFO - 효과음 재생 시작.
+2024-10-20 21:40:21,403 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:40:21,486 - INFO - 효과음 재생 완료.
+2024-10-20 21:40:43,322 - INFO - 효과음 재생 시작.
+2024-10-20 21:40:44,178 - INFO - 효과음 재생 완료.
+2024-10-20 21:40:50,202 - INFO - 효과음 재생 시작.
+2024-10-20 21:40:51,019 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:40:51,064 - INFO - 효과음 재생 완료.
+2024-10-20 21:40:55,952 - INFO - 효과음 재생 시작.
+2024-10-20 21:40:56,621 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:40:56,759 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:05,455 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:06,248 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:41:06,313 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:12,027 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:12,713 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:41:12,835 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:19,878 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:20,739 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:24,453 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:25,226 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:41:25,312 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:46,884 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:47,740 - INFO - 효과음 재생 완료.
+2024-10-20 21:41:58,413 - INFO - 효과음 재생 시작.
+2024-10-20 21:41:59,323 - INFO - 효과음 재생 완료.
+2024-10-20 21:42:04,292 - INFO - 효과음 재생 시작.
+2024-10-20 21:42:05,082 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:42:05,155 - INFO - 효과음 재생 완료.
+2024-10-20 21:42:07,242 - INFO - 효과음 재생 시작.
+2024-10-20 21:42:07,887 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:42:07,999 - INFO - 효과음 재생 완료.
+2024-10-20 21:42:15,287 - INFO - 음성 녹음 시작
+2024-10-20 21:42:15,654 - INFO - 음성 녹음 중지
+2024-10-20 21:42:15,692 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:15,693 - INFO - 녹음된 파일 크기: 44 bytes
+2024-10-20 21:42:15,696 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:16,726 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:42:29,103 - INFO - 음성 녹음 시작
+2024-10-20 21:42:29,476 - INFO - 음성 녹음 중지
+2024-10-20 21:42:29,477 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:29,477 - INFO - 녹음된 파일 크기: 44 bytes
+2024-10-20 21:42:29,479 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:29,934 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:42:30,674 - INFO - 음성 녹음 시작
+2024-10-20 21:42:30,926 - INFO - 음성 녹음 중지
+2024-10-20 21:42:30,927 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:30,927 - INFO - 녹음된 파일 크기: 44 bytes
+2024-10-20 21:42:30,928 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:31,374 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:42:31,760 - INFO - 음성 녹음 시작
+2024-10-20 21:42:33,353 - INFO - 음성 녹음 중지
+2024-10-20 21:42:33,355 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:33,355 - INFO - 녹음된 파일 크기: 63532 bytes
+2024-10-20 21:42:33,358 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:34,281 - INFO - 인식된 텍스트: 내일 뭐 해
+2024-10-20 21:42:34,375 - INFO - 효과음 재생 시작.
+2024-10-20 21:42:35,165 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:42:35,236 - INFO - 효과음 재생 완료.
+2024-10-20 21:42:40,370 - INFO - 음성 녹음 시작
+2024-10-20 21:42:41,812 - INFO - 음성 녹음 중지
+2024-10-20 21:42:41,815 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:41,815 - INFO - 녹음된 파일 크기: 53292 bytes
+2024-10-20 21:42:41,816 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:42,729 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-20 21:42:45,070 - INFO - 음성 녹음 시작
+2024-10-20 21:42:47,173 - INFO - 음성 녹음 중지
+2024-10-20 21:42:47,174 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:47,175 - INFO - 녹음된 파일 크기: 86060 bytes
+2024-10-20 21:42:47,178 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:48,160 - INFO - 인식된 텍스트: 후렉스
+2024-10-20 21:42:48,258 - INFO - 효과음 재생 시작.
+2024-10-20 21:42:48,982 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:42:49,066 - INFO - 효과음 재생 완료.
+2024-10-20 21:42:51,698 - INFO - 음성 녹음 시작
+2024-10-20 21:42:55,489 - INFO - 음성 녹음 중지
+2024-10-20 21:42:55,491 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:42:55,492 - INFO - 녹음된 파일 크기: 165932 bytes
+2024-10-20 21:42:55,495 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:42:56,966 - INFO - 인식된 텍스트: 섹스
+2024-10-20 21:42:57,061 - INFO - 효과음 재생 시작.
+2024-10-20 21:42:57,636 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:42:57,715 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:06,325 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:07,286 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:43:07,334 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:14,806 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:15,666 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:17,900 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:18,699 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:43:18,762 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:22,797 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:23,629 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:43:23,654 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:48,243 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:49,011 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:43:49,101 - INFO - 효과음 재생 완료.
+2024-10-20 21:43:51,512 - INFO - 효과음 재생 시작.
+2024-10-20 21:43:52,369 - INFO - 효과음 재생 완료.
+2024-10-20 21:44:12,592 - INFO - 효과음 재생 시작.
+2024-10-20 21:44:13,415 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:44:13,499 - INFO - 효과음 재생 완료.
+2024-10-20 21:44:24,083 - INFO - 효과음 재생 시작.
+2024-10-20 21:44:24,942 - INFO - 효과음 재생 완료.
+2024-10-20 21:44:39,545 - INFO - 효과음 재생 시작.
+2024-10-20 21:44:40,410 - INFO - 효과음 재생 완료.
+2024-10-20 21:44:51,010 - INFO - 효과음 재생 시작.
+2024-10-20 21:44:51,874 - INFO - 효과음 재생 완료.
+2024-10-20 21:44:59,046 - INFO - 효과음 재생 시작.
+2024-10-20 21:44:59,783 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:44:59,905 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:02,664 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:03,523 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:20,448 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:21,201 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:21,258 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:22,839 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:23,527 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:23,648 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:27,627 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:28,475 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:28,533 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:40,374 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:40,966 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:41,037 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:47,295 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:48,204 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:53,556 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:54,245 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:54,315 - INFO - 효과음 재생 완료.
+2024-10-20 21:45:57,396 - INFO - 효과음 재생 시작.
+2024-10-20 21:45:58,125 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:45:58,203 - INFO - 효과음 재생 완료.
+2024-10-20 21:46:02,295 - INFO - 효과음 재생 시작.
+2024-10-20 21:46:03,150 - INFO - 효과음 재생 완료.
+2024-10-20 21:46:24,699 - INFO - 효과음 재생 시작.
+2024-10-20 21:46:25,556 - INFO - 효과음 재생 완료.
+2024-10-20 21:46:30,412 - INFO - 효과음 재생 시작.
+2024-10-20 21:46:31,280 - INFO - 효과음 재생 완료.
+2024-10-20 21:46:50,759 - INFO - 효과음 재생 시작.
+2024-10-20 21:46:51,617 - INFO - 효과음 재생 완료.
+2024-10-20 21:47:01,355 - INFO - 음성 녹음 시작
+2024-10-20 21:47:04,080 - INFO - 음성 녹음 중지
+2024-10-20 21:47:04,082 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:47:04,083 - INFO - 녹음된 파일 크기: 116780 bytes
+2024-10-20 21:47:04,083 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:47:05,899 - INFO - 인식된 텍스트: 야 너는
+2024-10-20 21:47:05,994 - INFO - 효과음 재생 시작.
+2024-10-20 21:47:06,855 - INFO - 효과음 재생 완료.
+2024-10-20 21:47:09,409 - INFO - 음성 녹음 시작
+2024-10-20 21:47:14,634 - INFO - 음성 녹음 중지
+2024-10-20 21:47:14,635 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-20 21:47:14,637 - INFO - 녹음된 파일 크기: 235564 bytes
+2024-10-20 21:47:14,638 - INFO - Speech-to-Text 변환 시작
+2024-10-20 21:47:16,548 - INFO - 인식된 텍스트: 너는 고추 아버지야
+2024-10-20 21:47:16,661 - INFO - 효과음 재생 시작.
+2024-10-20 21:47:17,520 - INFO - 효과음 재생 완료.
+2024-10-20 21:47:32,882 - INFO - 효과음 재생 시작.
+2024-10-20 21:47:33,609 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:47:33,739 - INFO - 효과음 재생 완료.
+2024-10-20 21:47:39,986 - INFO - 효과음 재생 시작.
+2024-10-20 21:47:40,845 - INFO - 효과음 재생 완료.
+2024-10-20 21:47:48,776 - INFO - 효과음 재생 시작.
+2024-10-20 21:47:49,635 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:10,229 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:10,970 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:48:11,085 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:13,064 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:13,738 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:48:13,822 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:26,465 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:27,505 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:48:27,577 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:33,001 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:33,809 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:48:33,910 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:36,159 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:36,940 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:48:37,018 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:42,743 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:43,605 - INFO - 효과음 재생 완료.
+2024-10-20 21:48:56,434 - INFO - 효과음 재생 시작.
+2024-10-20 21:48:57,293 - INFO - 효과음 재생 완료.
+2024-10-20 21:49:06,247 - INFO - 효과음 재생 시작.
+2024-10-20 21:49:07,020 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:49:07,105 - INFO - 효과음 재생 완료.
+2024-10-20 21:49:31,790 - INFO - 효과음 재생 시작.
+2024-10-20 21:49:32,647 - INFO - 효과음 재생 완료.
+2024-10-20 21:49:35,185 - INFO - 효과음 재생 시작.
+2024-10-20 21:49:36,042 - INFO - 효과음 재생 완료.
+2024-10-20 21:49:51,461 - INFO - 효과음 재생 시작.
+2024-10-20 21:49:52,263 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:49:52,369 - INFO - 효과음 재생 완료.
+2024-10-20 21:50:24,623 - INFO - 효과음 재생 시작.
+2024-10-20 21:50:25,479 - INFO - 효과음 재생 완료.
+2024-10-20 21:50:32,255 - INFO - 효과음 재생 시작.
+2024-10-20 21:50:32,965 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:50:33,063 - INFO - 효과음 재생 완료.
+2024-10-20 21:50:36,193 - INFO - 효과음 재생 시작.
+2024-10-20 21:50:37,033 - INFO - 효과음 재생 중지됨.
+2024-10-20 21:50:37,050 - INFO - 효과음 재생 완료.
+2024-10-20 21:50:41,766 - INFO - 효과음 재생 시작.
+2024-10-20 21:50:42,622 - INFO - 효과음 재생 완료.
+2024-10-20 21:50:48,593 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-136' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-20 21:50:48,594 - ERROR - Cancelling an overlapped future failed
+future: <_OverlappedFuture pending cb=[_ProactorReadPipeTransport._loop_reading()]>
+Traceback (most recent call last):
+  File "C:\Users\ach08\anaconda3\Lib\asyncio\windows_events.py", line 72, in _cancel_overlapped
+    self._ov.cancel()
+OSError: [WinError 6] 핸들이 잘못되었습니다
+2024-10-20 21:50:48,597 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001B9B29348F0>
+2024-10-20 21:50:48,597 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001B9B293DD90>, 365641.14)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001B9B2934950>
+2024-10-20 21:57:22,319 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:57:22,401 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:57:22,401 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:57:22,537 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:57:22,539 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:57:39,591 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-20 21:59:14,915 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 21:59:15,004 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 21:59:15,004 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 21:59:15,166 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 21:59:15,167 - INFO - 효과음 파일 로드 완료.
+2024-10-20 21:59:25,559 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002B703BF83B0>
+2024-10-20 21:59:25,563 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-20 22:02:37,651 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 22:02:37,744 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 22:02:37,745 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 22:02:37,874 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 22:02:37,876 - INFO - 효과음 파일 로드 완료.
+2024-10-20 22:03:04,775 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 22:03:04,880 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 22:03:04,880 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 22:03:05,005 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 22:03:05,008 - INFO - 효과음 파일 로드 완료.
+2024-10-20 22:03:39,923 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-20 22:04:32,799 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-20 22:04:32,880 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-20 22:04:32,880 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-20 22:04:33,017 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-20 22:04:33,018 - INFO - 효과음 파일 로드 완료.
+2024-10-20 22:04:36,632 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001E4E14A4710>
+2024-10-20 22:04:36,636 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 15:48:58,760 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 15:48:58,824 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 15:48:58,824 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 15:48:58,960 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 15:48:58,973 - INFO - 효과음 파일 로드 완료.
+2024-10-22 15:49:19,411 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000018669C04860>
+2024-10-22 15:49:19,413 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 16:02:27,057 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 16:02:27,150 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 16:02:27,150 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 16:02:27,288 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 16:02:27,290 - INFO - 효과음 파일 로드 완료.
+2024-10-22 16:03:49,951 - INFO - 음성 녹음 시작
+2024-10-22 16:03:51,633 - INFO - 음성 녹음 중지
+2024-10-22 16:03:51,661 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 16:03:51,664 - INFO - 녹음된 파일 크기: 57388 bytes
+2024-10-22 16:03:51,666 - INFO - Speech-to-Text 변환 시작
+2024-10-22 16:03:53,109 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-22 16:03:56,142 - INFO - 음성 녹음 시작
+2024-10-22 16:03:57,999 - INFO - 음성 녹음 중지
+2024-10-22 16:03:58,000 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 16:03:58,001 - INFO - 녹음된 파일 크기: 73772 bytes
+2024-10-22 16:03:58,007 - INFO - Speech-to-Text 변환 시작
+2024-10-22 16:03:58,924 - INFO - 인식된 텍스트: 먹을까
+2024-10-22 16:03:59,031 - INFO - 효과음 재생 시작.
+2024-10-22 16:03:59,890 - INFO - 효과음 재생 완료.
+2024-10-22 16:04:10,647 - INFO - 효과음 재생 시작.
+2024-10-22 16:04:11,413 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:04:11,507 - INFO - 효과음 재생 완료.
+2024-10-22 16:04:23,690 - INFO - 효과음 재생 시작.
+2024-10-22 16:04:24,550 - INFO - 효과음 재생 완료.
+2024-10-22 16:04:28,342 - INFO - 효과음 재생 시작.
+2024-10-22 16:04:29,199 - INFO - 효과음 재생 완료.
+2024-10-22 16:04:39,781 - INFO - 효과음 재생 시작.
+2024-10-22 16:04:40,578 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:04:40,639 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:04,611 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:04,636 - WARNING - 빈 메시지를 보낼 수 없습니다.
+2024-10-22 16:05:05,471 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:09,280 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:10,138 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:21,695 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:22,555 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:31,775 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:32,634 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:34,519 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:35,368 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:05:35,429 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:36,900 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:37,808 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:39,422 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:40,332 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:46,502 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:47,362 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:49,627 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:50,485 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:52,210 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:52,584 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:05:52,714 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:54,201 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:54,208 - WARNING - 빈 메시지를 보낼 수 없습니다.
+2024-10-22 16:05:54,265 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:05:54,404 - INFO - 효과음 재생 완료.
+2024-10-22 16:05:55,987 - INFO - 효과음 재생 시작.
+2024-10-22 16:05:56,421 - INFO - 효과음 재생 중지됨.
+2024-10-22 16:05:56,542 - INFO - 효과음 재생 완료.
+2024-10-22 16:06:00,333 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-37' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 16:06:00,333 - ERROR - Cancelling an overlapped future failed
+future: <_OverlappedFuture pending cb=[_ProactorReadPipeTransport._loop_reading()]>
+Traceback (most recent call last):
+  File "C:\Users\ach08\anaconda3\Lib\asyncio\windows_events.py", line 72, in _cancel_overlapped
+    self._ov.cancel()
+OSError: [WinError 6] 핸들이 잘못되었습니다
+2024-10-22 16:06:00,345 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000014A4D52C3B0>
+2024-10-22 16:06:00,346 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000014A4D529CD0>, 517757.359)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000014A4D52C470>
+2024-10-22 16:07:13,073 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 16:07:13,172 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 16:07:13,173 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 16:07:13,308 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 16:07:13,309 - INFO - 효과음 파일 로드 완료.
+2024-10-22 16:07:22,303 - INFO - 효과음 재생 시작.
+2024-10-22 16:07:23,111 - INFO - 효과음 재생 완료.
+2024-10-22 16:07:38,095 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 16:07:45,837 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 16:07:46,039 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 16:07:46,039 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 16:07:46,206 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 16:07:46,207 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:22:17,643 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:22:17,735 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:22:17,736 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:22:17,866 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:22:17,867 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:22:25,135 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:22:25,237 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:22:25,238 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:22:25,371 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:22:25,372 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:23:46,267 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:23:46,361 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:23:46,361 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:23:46,495 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:23:46,505 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:24:23,597 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:24:23,686 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:24:23,686 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:24:23,822 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:24:23,826 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:27:55,931 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:27:56,030 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:27:56,030 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:27:56,164 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:27:56,165 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:28:01,993 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:30:50,044 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:30:50,091 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:30:50,091 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:30:50,168 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:30:50,169 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:32:53,956 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:32:54,008 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:32:54,009 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:32:54,096 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:32:54,097 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:33:38,693 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:38:24,174 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:38:24,224 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:38:24,224 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:38:24,334 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:38:24,349 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:38:40,813 - INFO - 효과음 재생 시작.
+2024-10-22 19:38:41,669 - INFO - 효과음 재생 완료.
+2024-10-22 19:38:46,360 - INFO - 효과음 재생 시작.
+2024-10-22 19:38:47,175 - INFO - 효과음 재생 중지됨.
+2024-10-22 19:38:47,215 - INFO - 효과음 재생 완료.
+2024-10-22 19:38:49,675 - INFO - 효과음 재생 시작.
+2024-10-22 19:38:50,529 - INFO - 효과음 재생 완료.
+2024-10-22 19:39:09,941 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:39:09,988 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:39:09,988 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:39:10,067 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:39:10,067 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:39:15,715 - INFO - 효과음 재생 시작.
+2024-10-22 19:39:16,618 - INFO - 효과음 재생 완료.
+2024-10-22 19:39:20,241 - INFO - 효과음 재생 시작.
+2024-10-22 19:39:21,098 - INFO - 효과음 재생 완료.
+2024-10-22 19:41:36,764 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:41:36,810 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:41:36,810 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:41:36,889 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:41:36,890 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:41:41,685 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:41:48,138 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:41:48,186 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:41:48,186 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:41:48,263 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:41:48,264 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:41:58,504 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:42:10,207 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:42:10,255 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:42:10,255 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:42:10,332 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:42:10,333 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:42:14,294 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:42:21,741 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:42:21,790 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:42:21,791 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:42:21,868 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:42:21,868 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:42:29,309 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:43:34,045 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:43:34,093 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:43:34,094 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:43:34,171 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:43:34,172 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:43:41,673 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:44:13,128 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:44:13,177 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:44:13,177 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:44:13,253 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:44:13,254 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:44:19,270 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:44:32,477 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:44:32,526 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:44:32,527 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:44:32,602 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:44:32,603 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:44:59,849 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:45:02,891 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:45:02,942 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:45:02,942 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:45:03,020 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:45:03,021 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:45:08,269 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:45:28,282 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:45:28,338 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:45:28,338 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:45:28,413 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:45:28,413 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:46:10,274 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:46:21,512 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:46:21,558 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:46:21,558 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:46:21,635 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:46:21,636 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:46:55,400 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:46:55,447 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:46:55,447 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:46:55,526 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:46:55,527 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:47:02,229 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:48:34,888 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:48:34,937 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:48:34,937 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:48:35,049 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:48:35,069 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:48:42,266 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:49:23,178 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:49:23,237 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:49:23,237 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:49:23,330 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:49:23,331 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:49:28,316 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:49:35,958 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:49:36,005 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:49:36,005 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:49:36,092 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:49:36,093 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:49:46,353 - INFO - 효과음 재생 시작.
+2024-10-22 19:49:47,257 - INFO - 효과음 재생 완료.
+2024-10-22 19:51:17,067 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:51:17,113 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:51:17,113 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:51:17,191 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:51:17,192 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:51:17,214 - ERROR - 이미지를 불러오는 중 오류 발생: name 'QMovie' is not defined
+2024-10-22 19:52:01,716 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:52:21,917 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:52:21,965 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:52:21,966 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:52:22,042 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:52:22,043 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:52:22,064 - ERROR - 이미지를 불러오는 중 오류 발생: name 'QMovie' is not defined
+2024-10-22 19:57:18,137 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:57:18,187 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:57:18,187 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:57:18,265 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:57:18,266 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:57:18,287 - ERROR - 이미지를 불러오는 중 오류 발생: name 'QMovie' is not defined
+2024-10-22 19:57:27,263 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 19:58:06,951 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:58:07,001 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:58:07,001 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:58:07,080 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:58:07,081 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:58:07,102 - ERROR - 이미지를 불러오는 중 오류 발생: name 'QMovie' is not defined
+2024-10-22 19:59:15,083 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 19:59:15,154 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 19:59:15,155 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 19:59:15,266 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 19:59:15,267 - INFO - 효과음 파일 로드 완료.
+2024-10-22 19:59:22,473 - INFO - 효과음 재생 시작.
+2024-10-22 19:59:23,377 - INFO - 효과음 재생 완료.
+2024-10-22 19:59:28,495 - INFO - 효과음 재생 시작.
+2024-10-22 19:59:29,349 - INFO - 효과음 재생 완료.
+2024-10-22 20:00:58,657 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:00:58,707 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:00:58,707 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:00:58,784 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:00:58,785 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:00:58,816 - ERROR - 이미지를 불러오는 중 오류 발생: 'AIChatGUI' object has no attribute 'processing_movie'
+2024-10-22 20:01:04,824 - INFO - 효과음 재생 시작.
+2024-10-22 20:01:05,728 - INFO - 효과음 재생 완료.
+2024-10-22 20:01:08,040 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000001FFCEE27C20>
+2024-10-22 20:01:08,040 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000001FFCF053DD0>, 531867.234)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000001FFCEE27C80>
+2024-10-22 20:01:08,051 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:01:50,657 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:01:50,715 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:01:50,715 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:01:50,808 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:01:50,809 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:01:50,835 - ERROR - 이미지를 불러오는 중 오류 발생: 'AIChatGUI' object has no attribute 'processing_movie'
+2024-10-22 20:01:52,876 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:01:56,561 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:01:56,649 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:01:56,649 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:01:56,793 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:01:56,794 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:02:01,549 - INFO - 효과음 재생 시작.
+2024-10-22 20:02:01,569 - WARNING - 빈 메시지를 보낼 수 없습니다.
+2024-10-22 20:02:02,407 - INFO - 효과음 재생 완료.
+2024-10-22 20:04:51,765 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:04:51,818 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:04:51,818 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:04:51,912 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:04:51,913 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:04:56,434 - INFO - 효과음 재생 시작.
+2024-10-22 20:04:57,289 - INFO - 효과음 재생 완료.
+2024-10-22 20:08:58,054 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:08:58,114 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:08:58,114 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:08:58,216 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:08:58,216 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:09:02,665 - INFO - 효과음 재생 시작.
+2024-10-22 20:09:03,520 - INFO - 효과음 재생 완료.
+2024-10-22 20:11:24,374 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:11:24,429 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:11:24,430 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:11:24,525 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:11:24,526 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:11:33,699 - INFO - 효과음 재생 시작.
+2024-10-22 20:11:34,555 - INFO - 효과음 재생 완료.
+2024-10-22 20:11:38,941 - INFO - 효과음 재생 시작.
+2024-10-22 20:11:39,797 - INFO - 효과음 재생 완료.
+2024-10-22 20:12:15,970 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:12:16,021 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:12:16,021 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:12:16,110 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:12:16,111 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:12:21,486 - INFO - 효과음 재생 시작.
+2024-10-22 20:12:22,389 - INFO - 효과음 재생 완료.
+2024-10-22 20:12:58,796 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:12:58,848 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:12:58,849 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:12:58,927 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:12:58,928 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:13:10,926 - INFO - 효과음 재생 시작.
+2024-10-22 20:13:11,829 - INFO - 효과음 재생 완료.
+2024-10-22 20:13:16,314 - INFO - 효과음 재생 시작.
+2024-10-22 20:13:17,147 - INFO - 효과음 재생 중지됨.
+2024-10-22 20:13:17,169 - INFO - 효과음 재생 완료.
+2024-10-22 20:13:43,435 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:13:43,482 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:13:43,482 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:13:43,560 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:13:43,560 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:13:46,711 - INFO - 음성 녹음 시작
+2024-10-22 20:13:48,605 - INFO - 음성 녹음 중지
+2024-10-22 20:13:48,622 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 20:13:48,622 - INFO - 녹음된 파일 크기: 75820 bytes
+2024-10-22 20:13:48,623 - INFO - Speech-to-Text 변환 시작
+2024-10-22 20:13:50,111 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-22 20:13:56,266 - INFO - 효과음 재생 시작.
+2024-10-22 20:13:57,120 - INFO - 효과음 재생 완료.
+2024-10-22 20:14:55,175 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:14:55,223 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:14:55,223 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:14:55,300 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:14:55,301 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:14:59,768 - INFO - 효과음 재생 시작.
+2024-10-22 20:15:00,622 - INFO - 효과음 재생 완료.
+2024-10-22 20:15:04,064 - INFO - 효과음 재생 시작.
+2024-10-22 20:15:04,894 - INFO - 효과음 재생 중지됨.
+2024-10-22 20:15:04,967 - INFO - 효과음 재생 완료.
+2024-10-22 20:15:08,665 - INFO - 효과음 재생 시작.
+2024-10-22 20:15:09,567 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:03,964 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:18:04,016 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:18:04,016 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:18:04,120 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:18:04,121 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:18:09,187 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:10,091 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:19,171 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:18:19,219 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:18:19,219 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:18:19,310 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:18:19,310 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:18:23,659 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:24,561 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:29,067 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:29,922 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:39,131 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:18:39,178 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:18:39,178 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:18:39,252 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:18:39,253 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:18:42,524 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:43,428 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:46,086 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:46,990 - INFO - 효과음 재생 완료.
+2024-10-22 20:18:57,819 - INFO - 효과음 재생 시작.
+2024-10-22 20:18:58,724 - INFO - 효과음 재생 완료.
+2024-10-22 20:20:44,169 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:20:44,264 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:20:44,264 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:20:44,401 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:20:44,403 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:21:01,123 - INFO - 효과음 재생 시작.
+2024-10-22 20:21:01,976 - INFO - 효과음 재생 완료.
+2024-10-22 20:21:06,267 - INFO - 효과음 재생 시작.
+2024-10-22 20:21:07,122 - INFO - 효과음 재생 완료.
+2024-10-22 20:21:09,338 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000292C41BC650>
+2024-10-22 20:21:09,339 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000292C4433AD0>, 533068.187)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000292C4207A70>
+2024-10-22 20:21:09,340 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-6' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:30:59,202 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:30:59,251 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:30:59,251 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:30:59,332 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:30:59,333 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:31:04,401 - INFO - 효과음 재생 시작.
+2024-10-22 20:31:05,309 - INFO - 효과음 재생 완료.
+2024-10-22 20:31:05,623 - INFO - 이미지 변경: 처리 중 애니메이션 시작
+2024-10-22 20:31:07,952 - INFO - 이미지 변경: 원래 이미지로 복귀
+2024-10-22 20:31:12,969 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002084EC07D70>
+2024-10-22 20:31:12,969 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x000002084EE33D10>, 533666.593)]']
+connector: <aiohttp.connector.TCPConnector object at 0x000002084EC07DD0>
+2024-10-22 20:31:12,970 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:34:29,025 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:34:29,125 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:34:29,126 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:34:29,274 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:34:29,276 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:34:29,326 - ERROR - 이미지를 불러오는 중 오류 발생: [Errno 2] No such file or directory: 'C:\\Users\\ach08\\Desktop\\magic--\\tts_image.png'
+2024-10-22 20:34:33,201 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:35:07,794 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:35:07,874 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:35:07,875 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:35:08,008 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:35:08,010 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:35:08,051 - ERROR - 이미지를 불러오는 중 오류 발생: [Errno 2] No such file or directory: 'C:\\Users\\ach08\\Desktop\\magic--\\co2.png'
+2024-10-22 20:35:10,420 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:35:25,366 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:35:25,447 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:35:25,447 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:35:25,587 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:35:25,588 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:35:32,006 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:35:32,111 - INFO - 효과음 재생 시작.
+2024-10-22 20:35:32,970 - INFO - 효과음 재생 완료.
+2024-10-22 20:35:39,500 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:38:19,708 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:38:19,807 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:38:19,807 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:38:19,952 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:38:19,954 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:38:24,682 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:38:24,797 - INFO - 효과음 재생 시작.
+2024-10-22 20:38:25,707 - INFO - 효과음 재생 완료.
+2024-10-22 20:38:26,234 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:38:28,429 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:38:31,438 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:38:31,514 - INFO - 효과음 재생 시작.
+2024-10-22 20:38:32,427 - INFO - 효과음 재생 완료.
+2024-10-22 20:38:32,556 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:38:33,815 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:38:35,357 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:38:35,432 - INFO - 효과음 재생 시작.
+2024-10-22 20:38:36,341 - INFO - 효과음 재생 완료.
+2024-10-22 20:38:36,729 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:38:38,402 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:38:43,627 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:38:43,699 - INFO - 효과음 재생 시작.
+2024-10-22 20:38:44,608 - INFO - 효과음 재생 완료.
+2024-10-22 20:38:44,612 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:38:45,877 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:38:46,645 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:38:46,711 - INFO - 효과음 재생 시작.
+2024-10-22 20:38:47,569 - INFO - 효과음 재생 완료.
+2024-10-22 20:38:48,906 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:38:51,483 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:38:55,597 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000028C8DABCF80>
+2024-10-22 20:38:55,598 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x0000028C8DCD3CB0>, 534129.875)]']
+connector: <aiohttp.connector.TCPConnector object at 0x0000028C8DABCFE0>
+2024-10-22 20:38:55,603 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-12' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:40:04,072 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:40:04,154 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:40:04,155 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:40:04,316 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:40:04,317 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:40:13,522 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-1' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:40:13,523 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x000002A17D4DD4C0>
+2024-10-22 20:40:26,989 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:40:27,076 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:40:27,078 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:40:27,217 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:40:27,219 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:40:40,559 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:40:40,632 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:40:40,633 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:40:40,758 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:40:40,761 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:40:45,791 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:40:45,896 - INFO - 효과음 재생 시작.
+2024-10-22 20:40:46,803 - INFO - 효과음 재생 완료.
+2024-10-22 20:40:47,435 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:40:49,564 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:41:16,147 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x0000022E15FCD2E0>
+2024-10-22 20:41:16,150 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-4' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-22 20:41:18,676 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:41:18,796 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:41:18,797 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:41:18,912 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:41:18,913 - INFO - 효과음 파일 로드 완료.
+2024-10-22 20:41:46,706 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:41:47,580 - INFO - 효과음 재생 시작.
+2024-10-22 20:41:48,477 - INFO - 효과음 재생 완료.
+2024-10-22 20:41:48,765 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:41:50,141 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:41:56,002 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:41:56,088 - INFO - 효과음 재생 시작.
+2024-10-22 20:41:56,948 - INFO - 효과음 재생 완료.
+2024-10-22 20:41:56,970 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:41:57,073 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:41:59,758 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:41:59,844 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:00,556 - INFO - 효과음 재생 중지됨.
+2024-10-22 20:42:00,653 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:00,658 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:00,762 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:03,036 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:03,112 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:03,971 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:04,398 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:06,422 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:09,087 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:09,166 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:10,033 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:10,597 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:12,963 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:16,199 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:16,277 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:17,136 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:17,920 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:19,994 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:20,489 - INFO - 음성 녹음 시작
+2024-10-22 20:42:23,067 - INFO - 음성 녹음 중지
+2024-10-22 20:42:23,096 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 20:42:23,096 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:23,161 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:23,163 - INFO - 녹음된 파일 크기: 104492 bytes
+2024-10-22 20:42:23,165 - INFO - Speech-to-Text 변환 시작
+2024-10-22 20:42:24,021 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:25,069 - INFO - 인식된 텍스트: 오늘 잘 수 있을까
+2024-10-22 20:42:25,143 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:25,150 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:26,008 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:26,277 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:27,848 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:34,257 - INFO - 음성 녹음 시작
+2024-10-22 20:42:37,783 - INFO - 음성 녹음 중지
+2024-10-22 20:42:37,785 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 20:42:37,786 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:37,846 - INFO - 녹음된 파일 크기: 149548 bytes
+2024-10-22 20:42:37,847 - INFO - Speech-to-Text 변환 시작
+2024-10-22 20:42:37,847 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:38,705 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:39,335 - INFO - 인식된 텍스트: 사진이 정확히 멀쩡한게 없어
+2024-10-22 20:42:39,352 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:39,417 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:40,274 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:40,287 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:42:41,695 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:42:45,159 - INFO - 음성 녹음 시작
+2024-10-22 20:42:46,672 - INFO - 음성 녹음 중지
+2024-10-22 20:42:46,674 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 20:42:46,674 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:46,681 - INFO - 녹음된 파일 크기: 57388 bytes
+2024-10-22 20:42:46,681 - INFO - Speech-to-Text 변환 시작
+2024-10-22 20:42:46,733 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:47,577 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-22 20:42:47,593 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:54,122 - INFO - 음성 녹음 시작
+2024-10-22 20:42:56,551 - INFO - 음성 녹음 중지
+2024-10-22 20:42:56,554 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-22 20:42:56,554 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:56,624 - INFO - 녹음된 파일 크기: 100396 bytes
+2024-10-22 20:42:56,626 - INFO - Speech-to-Text 변환 시작
+2024-10-22 20:42:56,626 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:57,485 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:58,010 - INFO - 인식된 텍스트: 너 뒈져 있니
+2024-10-22 20:42:58,022 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-22 20:42:58,091 - INFO - 효과음 재생 시작.
+2024-10-22 20:42:58,950 - INFO - 효과음 재생 완료.
+2024-10-22 20:42:59,462 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-22 20:43:01,231 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-22 20:45:39,030 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-22 20:45:39,142 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-22 20:45:39,142 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-22 20:45:39,331 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-22 20:45:39,333 - INFO - 효과음 파일 로드 완료.
+2024-10-25 10:17:56,819 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-25 10:17:56,910 - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\ach08\\anaconda3\\Lib\\site-packages\\comtypes\\gen\\__init__.py'>
+2024-10-25 10:17:56,910 - INFO - Using writeable comtypes cache directory: 'C:\Users\ach08\anaconda3\Lib\site-packages\comtypes\gen'
+2024-10-25 10:17:57,129 - INFO - 기본 음성으로 설정됨: Microsoft Heami Desktop - Korean
+2024-10-25 10:17:57,130 - INFO - 효과음 파일 로드 완료.
+2024-10-25 10:18:14,705 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:14,752 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:15,607 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:15,710 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:16,923 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:18,747 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:18,789 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:19,643 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:19,806 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:21,263 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:23,935 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:23,967 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:24,822 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:25,191 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:26,598 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:29,858 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:29,894 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:30,718 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:18:30,748 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:30,748 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:32,003 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:33,215 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:33,248 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:34,102 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:34,303 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:35,359 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:37,046 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:37,081 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:37,801 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:18:37,935 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:37,935 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:39,143 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:40,134 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:40,166 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:41,021 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:41,039 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:42,598 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:44,349 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:44,380 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:45,235 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:45,423 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:47,484 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:51,098 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:51,132 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:51,986 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:52,227 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:53,786 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:18:54,318 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:18:54,352 - INFO - 효과음 재생 시작.
+2024-10-25 10:18:55,206 - INFO - 효과음 재생 완료.
+2024-10-25 10:18:55,348 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:18:57,859 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:04,620 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:05,342 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:06,197 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:06,241 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:07,902 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:07,966 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:07,997 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:08,842 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:19:08,853 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:08,853 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:10,259 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:18,071 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:18,792 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:19,646 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:19,791 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:21,745 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:30,750 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:31,502 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:32,346 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:19:32,355 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:32,355 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:33,661 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:38,326 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:38,359 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:39,213 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:39,350 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:41,056 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:19:49,971 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:19:50,762 - INFO - 효과음 재생 시작.
+2024-10-25 10:19:51,392 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:19:51,515 - INFO - 효과음 재생 완료.
+2024-10-25 10:19:51,515 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:19:52,421 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:20:17,441 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:20:18,237 - INFO - 효과음 재생 시작.
+2024-10-25 10:20:19,090 - INFO - 효과음 재생 완료.
+2024-10-25 10:20:19,282 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:20:20,793 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:20:32,311 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:20:33,107 - INFO - 효과음 재생 시작.
+2024-10-25 10:20:33,889 - INFO - 효과음 재생 중지됨.
+2024-10-25 10:20:33,961 - INFO - 효과음 재생 완료.
+2024-10-25 10:20:33,961 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:20:35,167 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:20:36,917 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-25 10:20:36,950 - INFO - 효과음 재생 시작.
+2024-10-25 10:20:37,806 - INFO - 효과음 재생 완료.
+2024-10-25 10:20:38,226 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-25 10:20:39,433 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-25 10:20:40,445 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-41' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-26 14:30:04,084 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:30:04,145 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:30:04,169 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:30:04,172 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:30:11,692 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:30:20,090 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:30:20,146 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:30:20,147 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:30:20,151 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:30:26,034 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:30:36,118 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:30:36,172 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:30:36,173 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:30:36,178 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:30:41,588 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:32:27,182 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:32:27,231 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:32:27,232 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:32:27,237 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:32:32,478 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:32:32,596 - INFO - 효과음 재생 시작.
+2024-10-26 14:32:33,464 - INFO - 효과음 재생 완료.
+2024-10-26 14:32:34,096 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:32:34,770 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:32:37,292 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:32:37,294 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:32:41,750 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:32:41,844 - INFO - 효과음 재생 시작.
+2024-10-26 14:32:42,694 - INFO - 효과음 재생 중지됨.
+2024-10-26 14:32:42,803 - INFO - 효과음 재생 완료.
+2024-10-26 14:32:42,805 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:32:43,065 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:32:43,924 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:32:43,924 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:32:45,416 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:32:45,495 - INFO - 효과음 재생 시작.
+2024-10-26 14:32:46,403 - INFO - 효과음 재생 완료.
+2024-10-26 14:32:46,404 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:32:46,745 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:32:48,413 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:32:48,413 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:32:53,035 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:32:53,106 - INFO - 효과음 재생 시작.
+2024-10-26 14:32:53,935 - INFO - 효과음 재생 중지됨.
+2024-10-26 14:32:54,015 - INFO - 효과음 재생 완료.
+2024-10-26 14:32:54,018 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:32:54,318 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:32:55,633 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:32:55,634 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:33:02,395 - INFO - 음성 녹음 시작
+2024-10-26 14:33:03,656 - INFO - 음성 녹음 중지
+2024-10-26 14:33:03,704 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-26 14:33:03,704 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:33:03,764 - INFO - 효과음 재생 시작.
+2024-10-26 14:33:03,764 - INFO - 녹음된 파일 크기: 36908 bytes
+2024-10-26 14:33:03,765 - INFO - Speech-to-Text 변환 시작
+2024-10-26 14:33:04,392 - ERROR - 음성 입력 처리 중 오류: Speech-to-Text 변환에 실패했습니다.
+2024-10-26 14:33:04,674 - INFO - 효과음 재생 완료.
+2024-10-26 14:33:16,731 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:33:16,803 - INFO - 효과음 재생 시작.
+2024-10-26 14:33:17,592 - INFO - 효과음 재생 중지됨.
+2024-10-26 14:33:17,713 - INFO - 효과음 재생 완료.
+2024-10-26 14:33:17,713 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:33:17,966 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:33:18,825 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:33:18,825 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:33:26,507 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:33:26,583 - INFO - 효과음 재생 시작.
+2024-10-26 14:33:27,493 - INFO - 효과음 재생 완료.
+2024-10-26 14:33:27,621 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:33:27,890 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:33:29,507 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:33:29,508 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:33:37,166 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-15' coro=<ClientSession.close() done, defined at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-26 14:41:36,615 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:41:36,699 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:41:36,702 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:41:36,755 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:41:36,757 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:41:36,759 - DEBUG - Using proactor: IocpProactor
+2024-10-26 14:41:36,767 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:41:43,610 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:41:43,714 - INFO - 효과음 재생 시작.
+2024-10-26 14:41:44,627 - INFO - 효과음 재생 완료.
+2024-10-26 14:41:44,819 - ERROR - TTS 재생 중 오류: TextToSpeechClient.synthesize_speech() takes from 1 to 2 positional arguments but 4 were given
+2024-10-26 14:41:44,819 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:41:44,825 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:41:44,826 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:41:57,546 - ERROR - Unclosed client session
+client_session: <aiohttp.client.ClientSession object at 0x00000195D6EF09B0>
+2024-10-26 14:41:57,547 - ERROR - Unclosed connector
+connections: ['[(<aiohttp.client_proto.ResponseHandler object at 0x00000195D82DC7D0>, 319731.453)]']
+connector: <aiohttp.connector.TCPConnector object at 0x00000195D7182B10>
+2024-10-26 14:41:57,553 - ERROR - Task was destroyed but it is pending!
+task: <Task pending name='Task-5' coro=<ClientSession.close() running at C:\Users\ach08\anaconda3\Lib\site-packages\aiohttp\client.py:1029> cb=[_chain_future.<locals>._call_set_state() at C:\Users\ach08\anaconda3\Lib\asyncio\futures.py:394]>
+2024-10-26 14:43:57,346 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:43:57,418 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:43:57,420 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:43:57,468 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:43:57,470 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:43:57,470 - DEBUG - Using proactor: IocpProactor
+2024-10-26 14:43:57,474 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:44:07,231 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:07,347 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:08,224 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:08,427 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:08,859 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:09,715 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:09,717 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:11,509 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:11,591 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:12,501 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:12,501 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:12,764 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:13,923 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:13,923 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:20,513 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:20,600 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:21,507 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:21,507 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:21,789 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:22,445 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:22,447 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:24,187 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:24,262 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:25,171 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:25,171 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:25,386 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:26,192 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:26,192 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:31,348 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:31,436 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:32,296 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:32,298 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:32,546 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:33,603 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:33,605 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:36,134 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:36,240 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:37,098 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:37,098 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:37,273 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:38,129 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:38,129 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:44:39,856 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:44:39,939 - INFO - 효과음 재생 시작.
+2024-10-26 14:44:40,848 - INFO - 효과음 재생 완료.
+2024-10-26 14:44:40,849 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:44:41,055 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:44:42,213 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:44:42,214 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:46:52,109 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:46:52,183 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:46:52,184 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:46:52,232 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:46:52,233 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:46:52,236 - DEBUG - Using proactor: IocpProactor
+2024-10-26 14:46:52,241 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:46:57,468 - INFO - 음성 녹음 시작
+2024-10-26 14:47:03,542 - INFO - 음성 녹음 중지
+2024-10-26 14:47:03,590 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-26 14:47:03,591 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:47:03,642 - INFO - 효과음 재생 시작.
+2024-10-26 14:47:03,642 - INFO - 녹음된 파일 크기: 180268 bytes
+2024-10-26 14:47:03,643 - INFO - Speech-to-Text 변환 시작
+2024-10-26 14:47:04,549 - INFO - 효과음 재생 완료.
+2024-10-26 14:47:05,093 - INFO - 음성 인식 실패, 사용자에게 다시 요청.
+2024-10-26 14:47:05,775 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:47:09,758 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:47:09,760 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:49:50,666 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:49:50,801 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 14:49:50,802 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 14:49:50,855 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 14:49:50,856 - INFO - 효과음 파일 로드 완료.
+2024-10-26 14:49:50,858 - DEBUG - Using proactor: IocpProactor
+2024-10-26 14:49:50,863 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 14:49:55,897 - INFO - 음성 녹음 시작
+2024-10-26 14:49:57,043 - INFO - 음성 녹음 중지
+2024-10-26 14:49:57,086 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-26 14:49:57,087 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:49:57,142 - INFO - 효과음 재생 시작.
+2024-10-26 14:49:57,143 - INFO - 녹음된 파일 크기: 20524 bytes
+2024-10-26 14:49:57,144 - INFO - Speech-to-Text 변환 시작
+2024-10-26 14:49:57,805 - INFO - 음성 인식 실패, 사용자에게 다시 요청.
+2024-10-26 14:49:58,053 - INFO - 효과음 재생 완료.
+2024-10-26 14:49:58,498 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:50:02,483 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:50:02,485 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:50:02,765 - INFO - 음성 녹음 시작
+2024-10-26 14:50:06,583 - INFO - 음성 녹음 중지
+2024-10-26 14:50:06,585 - INFO - 녹음 완료, 파일 저장됨: voice_input.wav
+2024-10-26 14:50:06,586 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:50:06,649 - INFO - 효과음 재생 시작.
+2024-10-26 14:50:06,650 - INFO - 녹음된 파일 크기: 112684 bytes
+2024-10-26 14:50:06,650 - INFO - Speech-to-Text 변환 시작
+2024-10-26 14:50:07,558 - INFO - 효과음 재생 완료.
+2024-10-26 14:50:07,838 - INFO - 음성 인식 실패, 사용자에게 다시 요청.
+2024-10-26 14:50:08,083 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:50:12,069 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:50:12,069 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:50:17,091 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:50:17,162 - INFO - 효과음 재생 시작.
+2024-10-26 14:50:18,073 - INFO - 효과음 재생 완료.
+2024-10-26 14:50:18,074 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:50:18,276 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:50:19,136 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:50:19,139 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 14:50:20,837 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 14:50:20,925 - INFO - 효과음 재생 시작.
+2024-10-26 14:50:21,783 - INFO - 효과음 재생 완료.
+2024-10-26 14:50:22,102 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 14:50:22,461 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 14:50:24,582 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 14:50:24,584 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
+2024-10-26 17:11:59,014 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 17:11:59,116 - INFO - Google Cloud Speech-to-Text 클라이언트 초기화 완료.
+2024-10-26 17:11:59,117 - DEBUG - Checking C:\Users\ach08\Desktop\magic--\magic-438603-62aee752a772.json for explicit credentials as part of auth process...
+2024-10-26 17:11:59,165 - INFO - Google Cloud Text-to-Speech 클라이언트 초기화 완료.
+2024-10-26 17:11:59,166 - INFO - 효과음 파일 로드 완료.
+2024-10-26 17:11:59,167 - DEBUG - Using proactor: IocpProactor
+2024-10-26 17:11:59,173 - INFO - 현재 운영체제에서는 GPIO를 지원하지 않습니다.
+2024-10-26 17:12:09,646 - INFO - 이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작
+2024-10-26 17:12:09,745 - INFO - 효과음 재생 시작.
+2024-10-26 17:12:10,603 - INFO - 효과음 재생 완료.
+2024-10-26 17:12:11,104 - INFO - 이미지 변경: TTS 시작 시 TTS 이미지로 변경
+2024-10-26 17:12:11,570 - INFO - Google TTS 음성 재생 시작.
+2024-10-26 17:12:12,428 - INFO - Google TTS 음성 재생 완료.
+2024-10-26 17:12:12,429 - INFO - 이미지 변경: TTS 완료 시 원래 이미지로 복귀
