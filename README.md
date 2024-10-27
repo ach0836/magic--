@@ -1,7 +1,5 @@
 # Magic Conch Shell
 
-![Magic Conch Shell](images/magic-conch-shell.png)
-
 **Magic Conch Shell** is an interactive AI-powered chat application that combines voice input, text-to-speech (TTS), speech-to-text (STT), and GPIO (General Purpose Input/Output) functionalities. Designed for both desktop and embedded systems like Raspberry Pi, this application provides a seamless and intuitive user experience, enabling users to communicate with an AI assistant using both text and voice commands.
 
 ## Table of Contents
