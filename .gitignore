@@ -4,4 +4,5 @@ build
 dist
 magic.spec
 app.log
+
 voice_input.wav
