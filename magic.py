@@ -10,6 +10,7 @@ import logging
 from concurrent.futures import ThreadPoolExecutor
 from queue import Queue
 from functools import partial
+from typing import Optional, Any
 
 import aiohttp
 import pyaudio
@@ -50,37 +51,37 @@ logger.addHandler(stream_handler)
 
 load_dotenv()
 
-API_KEY = os.getenv("OPENAI_API_KEY")
+API_KEY: str = os.getenv("OPENAI_API_KEY") or ""
 if not API_KEY:
     logger.error("OPENAI_API_KEY 환경 변수가 설정되지 않았습니다.")
     sys.exit(1)
 
-GOOGLE_CREDS = os.getenv("GOOGLE_APPLICATION_CREDENTIALS")
+GOOGLE_CREDS: str = os.getenv("GOOGLE_APPLICATION_CREDENTIALS") or ""
 if not GOOGLE_CREDS:
     logger.error("GOOGLE_APPLICATION_CREDENTIALS 환경 변수가 설정되지 않았습니다.")
     sys.exit(1)
 
-OPENAI_API_URL = "https://api.openai.com/v1/chat/completions"
+OPENAI_API_URL: str = "https://api.openai.com/v1/chat/completions"
 
 
 class WorkerSignals(QObject):
-    message = pyqtSignal(str)
-    start_processing_image = pyqtSignal()
-    start_tts_image = pyqtSignal()
-    stop_tts_image = pyqtSignal()
-    button_pressed = pyqtSignal()
+    message: pyqtSignal = pyqtSignal(str)
+    start_processing_image: pyqtSignal = pyqtSignal()
+    start_tts_image: pyqtSignal = pyqtSignal()
+    stop_tts_image: pyqtSignal = pyqtSignal()
+    button_pressed: pyqtSignal = pyqtSignal()
 
 
 class TTSManager:
     """Google Cloud Text-to-Speech를 관리하는 클래스."""
 
-    def __init__(self, tts_client, signals):
-        self.tts_client = tts_client
-        self.signals = signals
-        self.play_obj_lock = threading.Lock()
-        self.current_play_obj = None
+    def __init__(self, tts_client: texttospeech.TextToSpeechClient, signals: WorkerSignals) -> None:
+        self.tts_client: texttospeech.TextToSpeechClient = tts_client
+        self.signals: WorkerSignals = signals
+        self.play_obj_lock: threading.Lock = threading.Lock()
+        self.current_play_obj: Optional[sa.PlayObject] = None
 
-    async def synthesize_and_play(self, text):
+    async def synthesize_and_play(self, text: str) -> None:
         """텍스트를 TTS로 변환하고 재생."""
         try:
             synthesis_input = texttospeech.SynthesisInput(text=text)
@@ -92,7 +93,8 @@ class TTSManager:
                 audio_encoding=texttospeech.AudioEncoding.LINEAR16
             )
 
-            response = await asyncio.get_event_loop().run_in_executor(
+            loop = asyncio.get_event_loop()
+            response: texttospeech.SynthesizeSpeechResponse = await loop.run_in_executor(
                 None,
                 partial(
                     self.tts_client.synthesize_speech,
@@ -102,14 +104,15 @@ class TTSManager:
                 )
             )
 
-            audio_content = response.audio_content
+            audio_content: bytes = response.audio_content
             audio_stream = io.BytesIO(audio_content)
-            wave_obj = sa.WaveObject.from_wave_read(wave.Wave_read(audio_stream))
+            wave_read = wave.Wave_read(audio_stream)
+            wave_obj: sa.WaveObject = sa.WaveObject.from_wave_read(wave_read)
 
             with self.play_obj_lock:
                 self.current_play_obj = wave_obj.play()
             logger.info("Google TTS 음성 재생 시작.")
-            await asyncio.get_event_loop().run_in_executor(None, self.current_play_obj.wait_done)
+            await loop.run_in_executor(None, self.current_play_obj.wait_done)
             logger.info("Google TTS 음성 재생 완료.")
 
         except Exception as e:
@@ -121,14 +124,14 @@ class TTSManager:
 class STTManager:
     """Google Cloud Speech-to-Text를 관리하는 클래스."""
 
-    def __init__(self, stt_client):
-        self.stt_client = stt_client
+    def __init__(self, stt_client: speech.SpeechClient) -> None:
+        self.stt_client: speech.SpeechClient = stt_client
 
-    async def transcribe_audio(self, audio_file_path):
+    async def transcribe_audio(self, audio_file_path: str) -> str:
         """오디오 파일을 텍스트로 변환."""
         try:
             with open(audio_file_path, 'rb') as audio_file:
-                content = audio_file.read()
+                content: bytes = audio_file.read()
 
             audio = speech.RecognitionAudio(content=content)
             config = speech.RecognitionConfig(
@@ -137,7 +140,8 @@ class STTManager:
                 language_code="ko-KR"
             )
 
-            response = await asyncio.get_event_loop().run_in_executor(
+            loop = asyncio.get_event_loop()
+            response: speech.RecognizeResponse = await loop.run_in_executor(
                 None,
                 partial(
                     self.stt_client.recognize,
@@ -149,7 +153,8 @@ class STTManager:
             if not response.results:
                 return ""
 
-            return response.results[0].alternatives[0].transcript.strip()
+            transcript: str = response.results[0].alternatives[0].transcript.strip()
+            return transcript
 
         except Exception as e:
             logger.error(f"Speech-to-Text 변환 오류: {e}")
@@ -159,7 +164,7 @@ class STTManager:
 class AIChatGUI(QMainWindow):
     """AI Chat GUI 애플리케이션 클래스."""
 
-    def __init__(self):
+    def __init__(self) -> None:
         super().__init__()
 
         self.setWindowTitle("Magic Conch Shell")
@@ -167,36 +172,36 @@ class AIChatGUI(QMainWindow):
         self.setStyleSheet("background-color: #ffffff;")
         self.setWindowIcon(QIcon("icon.png"))
 
-        self.executor = ThreadPoolExecutor(max_workers=4)
-        self.last_ai_response = None
+        self.executor: ThreadPoolExecutor = ThreadPoolExecutor(max_workers=4)
+        self.last_ai_response: Optional[str] = None
 
         self.setup_stt()
         self.init_tts_client()
         self.load_sound_effect()
 
-        self.loop = asyncio.new_event_loop()
-        self.loop_thread = threading.Thread(target=self.start_loop, daemon=True)
+        self.loop: asyncio.AbstractEventLoop = asyncio.new_event_loop()
+        self.loop_thread: threading.Thread = threading.Thread(target=self.start_loop, daemon=True)
         self.loop_thread.start()
 
-        self.aiohttp_session = aiohttp.ClientSession(loop=self.loop)
+        self.aiohttp_session: aiohttp.ClientSession = aiohttp.ClientSession(loop=self.loop)
 
-        self.recording = False
-        self.frames = []
-        self.stop_event = threading.Event()
+        self.recording: bool = False
+        self.frames: list[bytes] = []
+        self.stop_event: threading.Event = threading.Event()
 
-        self.speech_queue = Queue()
-        self.speech_thread = threading.Thread(target=self.speech_worker, daemon=True)
+        self.speech_queue: Queue = Queue()
+        self.speech_thread: threading.Thread = threading.Thread(target=self.speech_worker, daemon=True)
         self.speech_thread.start()
 
-        self.signals = WorkerSignals()
+        self.signals: WorkerSignals = WorkerSignals()
         self.signals.message.connect(self.append_ai_message)
         self.signals.start_processing_image.connect(self.start_processing_image_slot)
         self.signals.start_tts_image.connect(self.start_tts_image_slot)
         self.signals.stop_tts_image.connect(self.stop_tts_image_slot)
         self.signals.button_pressed.connect(self.send_message)
 
-        self.tts_manager = TTSManager(self.tts_client, self.signals)
-        self.stt_manager = STTManager(self.stt_client)
+        self.tts_manager: TTSManager = TTSManager(self.tts_client, self.signals)
+        self.stt_manager: STTManager = STTManager(self.stt_client)
 
         self.setup_gpio()
 
@@ -207,7 +212,7 @@ class AIChatGUI(QMainWindow):
 
         self.show()
 
-    def setup_gpio(self):
+    def setup_gpio(self) -> None:
         if Button is not None:
             try:
                 self.button = Button(17)
@@ -218,30 +223,30 @@ class AIChatGUI(QMainWindow):
         else:
             logger.info("현재 운영체제에서는 GPIO를 지원하지 않습니다.")
 
-    def on_button_pressed(self):
+    def on_button_pressed(self) -> None:
         logger.info("GPIO 버튼이 눌렸습니다.")
         self.signals.button_pressed.emit()
 
-    def start_loop(self):
+    def start_loop(self) -> None:
         asyncio.set_event_loop(self.loop)
         self.loop.run_forever()
 
-    def create_main_layout(self):
-        self.central_widget = QWidget()
+    def create_main_layout(self) -> None:
+        self.central_widget: QWidget = QWidget()
         self.setCentralWidget(self.central_widget)
-        self.main_layout = QVBoxLayout(self.central_widget)
+        self.main_layout: QVBoxLayout = QVBoxLayout(self.central_widget)
         self.main_layout.setContentsMargins(20, 20, 20, 20)
 
-        top_frame = QFrame()
-        top_layout = QHBoxLayout(top_frame)
+        top_frame: QFrame = QFrame()
+        top_layout: QHBoxLayout = QHBoxLayout(top_frame)
 
-        header_label = QLabel("Magic Conch Shell")
-        header_font = QFont("Helvetica", 24, QFont.Weight.Bold)
+        header_label: QLabel = QLabel("Magic Conch Shell")
+        header_font: QFont = QFont("Helvetica", 24, QFont.Weight.Bold)
         header_label.setFont(header_font)
         header_label.setStyleSheet("color: #2c3e50;")
 
-        self.status_label = QLabel("Status: Waiting")
-        status_font = QFont("Helvetica", 12)
+        self.status_label: QLabel = QLabel("Status: Waiting")
+        status_font: QFont = QFont("Helvetica", 12)
         self.status_label.setFont(status_font)
         self.status_label.setStyleSheet("color: #16a085;")
 
@@ -251,23 +256,23 @@ class AIChatGUI(QMainWindow):
 
         self.main_layout.addWidget(top_frame)
 
-    def create_image_frame(self):
-        image_frame = QFrame()
-        image_layout = QVBoxLayout(image_frame)
+    def create_image_frame(self) -> None:
+        image_frame: QFrame = QFrame()
+        image_layout: QVBoxLayout = QVBoxLayout(image_frame)
 
         try:
-            original_image = self.load_and_resize_image("co1.jpg", (500, 348))
-            self.original_image = original_image
+            original_image: Optional[QPixmap] = self.load_and_resize_image("co1.jpg", (500, 348))
+            self.original_image: Optional[QPixmap] = original_image
 
-            processing_movie = QMovie("processing.gif")
+            processing_movie: QMovie = QMovie("processing.gif")
             if not processing_movie.isValid():
                 raise FileNotFoundError("Processing GIF 파일이 유효하지 않습니다: processing.gif")
-            self.processing_movie = processing_movie
+            self.processing_movie: QMovie = processing_movie
 
-            tts_image = self.load_and_resize_image("co2.jpg", (500, 348))
-            self.tts_image = tts_image
+            tts_image: Optional[QPixmap] = self.load_and_resize_image("co2.jpg", (500, 348))
+            self.tts_image: Optional[QPixmap] = tts_image
 
-            self.image_label = QLabel()
+            self.image_label: QLabel = QLabel()
             self.image_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
             self.image_label.setStyleSheet("background-color: #ffffff;")
             self.image_label.setPixmap(self.original_image)
@@ -282,33 +287,33 @@ class AIChatGUI(QMainWindow):
 
         self.main_layout.addWidget(image_frame)
 
-    def load_and_resize_image(self, path, size):
+    def load_and_resize_image(self, path: str, size: tuple[int, int]) -> Optional[QPixmap]:
         """이미지를 로드하고 지정된 크기로 리사이즈."""
         try:
-            pil_image = Image.open(path)
+            pil_image: Image.Image = Image.open(path)
             pil_image = pil_image.resize(size, Image.LANCZOS)
             return self.pil_image_to_qpixmap(pil_image)
         except Exception as e:
             logger.error(f"이미지 로드 오류 ({path}): {e}")
             return None
 
-    def pil_image_to_qpixmap(self, pil_image):
-        rgb_image = pil_image.convert("RGB")
-        data = rgb_image.tobytes("raw", "RGB")
-        qimage = QImage(data, pil_image.width, pil_image.height, QImage.Format.Format_RGB888)
+    def pil_image_to_qpixmap(self, pil_image: Image.Image) -> QPixmap:
+        rgb_image: Image.Image = pil_image.convert("RGB")
+        data: bytes = rgb_image.tobytes("raw", "RGB")
+        qimage: QImage = QImage(data, pil_image.width, pil_image.height, QImage.Format.Format_RGB888)
         return QPixmap.fromImage(qimage)
 
-    def set_image(self, image):
+    def set_image(self, image: QPixmap) -> None:
         """이미지를 설정하고, 현재 실행 중인 애니메이션을 중지."""
         if hasattr(self, "processing_movie") and self.processing_movie.state() == QMovie.MovieState.Running:
             self.processing_movie.stop()
         self.image_label.setPixmap(image)
 
-    def create_chat_area(self):
-        chat_frame = QFrame()
-        chat_layout = QVBoxLayout(chat_frame)
+    def create_chat_area(self) -> None:
+        chat_frame: QFrame = QFrame()
+        chat_layout: QVBoxLayout = QVBoxLayout(chat_frame)
 
-        self.chat_area = QTextEdit()
+        self.chat_area: QTextEdit = QTextEdit()
         self.chat_area.setReadOnly(True)
         self.chat_area.setFont(QFont("Helvetica", 12))
         self.chat_area.setStyleSheet("""
@@ -324,11 +329,11 @@ class AIChatGUI(QMainWindow):
         chat_layout.addWidget(self.chat_area)
         self.main_layout.addWidget(chat_frame)
 
-    def create_input_area(self):
-        input_frame = QFrame()
-        input_layout = QHBoxLayout(input_frame)
+    def create_input_area(self) -> None:
+        input_frame: QFrame = QFrame()
+        input_layout: QHBoxLayout = QHBoxLayout(input_frame)
 
-        self.user_input = QLineEdit()
+        self.user_input: QLineEdit = QLineEdit()
         self.user_input.setFont(QFont("Helvetica", 12))
         self.user_input.setFixedHeight(40)
         self.user_input.setPlaceholderText("메시지를 입력하세요...")
@@ -346,7 +351,7 @@ class AIChatGUI(QMainWindow):
         """)
         self.user_input.returnPressed.connect(self.send_message)
 
-        self.send_button = QPushButton("제출")
+        self.send_button: QPushButton = QPushButton("제출")
         self.send_button.setFixedSize(80, 40)
         self.send_button.setStyleSheet("""
             QPushButton {
@@ -362,7 +367,7 @@ class AIChatGUI(QMainWindow):
         """)
         self.send_button.clicked.connect(self.send_message)
 
-        self.voice_button = QPushButton("음성 입력")
+        self.voice_button: QPushButton = QPushButton("음성 입력")
         self.voice_button.setFixedSize(100, 40)
         self.voice_button.setStyleSheet("""
             QPushButton {
@@ -385,42 +390,42 @@ class AIChatGUI(QMainWindow):
 
         self.main_layout.addWidget(input_frame)
 
-    def setup_stt(self):
+    def setup_stt(self) -> None:
         try:
-            self.stt_client = speech.SpeechClient()
+            self.stt_client: speech.SpeechClient = speech.SpeechClient()
             logger.info("Google Cloud Speech-to-Text 클라이언트 초기화 완료.")
         except Exception as e:
             logger.error(f"Google Cloud STT 초기화 오류: {e}")
             sys.exit(1)
 
-    def init_tts_client(self):
+    def init_tts_client(self) -> None:
         try:
-            self.tts_client = texttospeech.TextToSpeechClient()
+            self.tts_client: texttospeech.TextToSpeechClient = texttospeech.TextToSpeechClient()
             logger.info("Google Cloud Text-to-Speech 클라이언트 초기화 완료.")
         except Exception as e:
             logger.error(f"Google TTS 초기화 오류: {e}")
             sys.exit(1)
 
-    def load_sound_effect(self):
+    def load_sound_effect(self) -> None:
         try:
-            sound_effect_path = "bogle.wav"
+            sound_effect_path: str = "bogle.wav"
             if not os.path.exists(sound_effect_path):
                 raise FileNotFoundError(f"효과음 파일이 존재하지 않습니다: {sound_effect_path}")
-            self.sound_effect = sa.WaveObject.from_wave_file(sound_effect_path)
+            self.sound_effect: Optional[sa.WaveObject] = sa.WaveObject.from_wave_file(sound_effect_path)
             logger.info("효과음 파일 로드 완료.")
         except Exception as e:
             logger.error(f"효과음 파일 로드 오류: {e}")
             self.sound_effect = None
 
-    def speech_worker(self):
+    def speech_worker(self) -> None:
         while True:
-            item = self.speech_queue.get()
+            item: Optional[str] = self.speech_queue.get()
             if item is None:
                 break
             try:
                 if item == "__PLAY_SOUND_EFFECT__":
                     if self.sound_effect:
-                        play_obj = self.sound_effect.play()
+                        play_obj: sa.PlayObject = self.sound_effect.play()
                         logger.info("효과음 재생 시작.")
                         play_obj.wait_done()
                         logger.info("효과음 재생 완료.")
@@ -435,26 +440,26 @@ class AIChatGUI(QMainWindow):
             finally:
                 self.speech_queue.task_done()
 
-    def start_processing_image_slot(self):
+    def start_processing_image_slot(self) -> None:
         logger.info("이미지 변경: 메시지 제출 시 처리 중 애니메이션 시작")
         if self.processing_movie.state() == QMovie.MovieState.Running:
             self.processing_movie.stop()
         self.image_label.setMovie(self.processing_movie)
         self.processing_movie.start()
 
-    def start_tts_image_slot(self):
+    def start_tts_image_slot(self) -> None:
         logger.info("이미지 변경: TTS 시작 시 TTS 이미지로 변경")
         if self.processing_movie.state() == QMovie.MovieState.Running:
             self.processing_movie.stop()
         self.image_label.setPixmap(self.tts_image)
 
-    def stop_tts_image_slot(self):
+    def stop_tts_image_slot(self) -> None:
         logger.info("이미지 변경: TTS 완료 시 원래 이미지로 복귀")
         self.set_image(self.original_image)
 
-    def send_message(self):
+    def send_message(self) -> None:
         try:
-            user_text = self.user_input.text().strip()
+            user_text: str = self.user_input.text().strip()
             if not user_text:
                 logger.warning("빈 메시지를 보낼 수 없습니다.")
                 return
@@ -467,20 +472,20 @@ class AIChatGUI(QMainWindow):
         except Exception as e:
             logger.error(f"send_message 메서드에서 오류 발생: {e}")
 
-    def start_recording(self):
+    def start_recording(self) -> None:
         try:
             if not self.recording:
                 self.recording = True
                 self.frames = []
                 self.stop_event.clear()
-                self.recording_thread = threading.Thread(target=self.record_audio, daemon=True)
+                self.recording_thread: threading.Thread = threading.Thread(target=self.record_audio, daemon=True)
                 self.recording_thread.start()
                 self.update_status("Status: Recording...", "#e74c3c")
                 logger.info("음성 녹음 시작")
         except Exception as e:
             logger.error(f"start_recording 메서드에서 오류 발생: {e}")
 
-    def stop_recording(self):
+    def stop_recording(self) -> None:
         try:
             if self.recording:
                 self.recording = False
@@ -488,7 +493,7 @@ class AIChatGUI(QMainWindow):
                 self.recording_thread.join()
                 self.update_status("Status: Processing voice...", "#f39c12")
                 logger.info("음성 녹음 중지")
-                audio_file_path = "voice_input.wav"
+                audio_file_path: str = "voice_input.wav"
                 try:
                     with wave.open(audio_file_path, 'wb') as wf:
                         wf.setnchannels(1)
@@ -505,13 +510,13 @@ class AIChatGUI(QMainWindow):
         except Exception as e:
             logger.error(f"stop_recording 메서드에서 오류 발생: {e}")
 
-    def record_audio(self):
-        chunk_size = 1024
-        sample_format = pyaudio.paInt16
-        channels = 1
-        sample_rate = 16000
+    def record_audio(self) -> None:
+        chunk_size: int = 1024
+        sample_format: int = pyaudio.paInt16
+        channels: int = 1
+        sample_rate: int = 16000
 
-        audio_interface = pyaudio.PyAudio()
+        audio_interface: pyaudio.PyAudio = pyaudio.PyAudio()
 
         try:
             stream = audio_interface.open(
@@ -522,7 +527,7 @@ class AIChatGUI(QMainWindow):
                 input=True
             )
             while not self.stop_event.is_set():
-                data = stream.read(chunk_size, exception_on_overflow=False)
+                data: bytes = stream.read(chunk_size, exception_on_overflow=False)
                 self.frames.append(data)
         except Exception as e:
             logger.error(f"녹음 중 오류 발생: {e}")
@@ -531,13 +536,13 @@ class AIChatGUI(QMainWindow):
             stream.close()
             audio_interface.terminate()
 
-    def process_voice_input(self, audio_file_path):
+    def process_voice_input(self, audio_file_path: str) -> None:
         asyncio.run_coroutine_threadsafe(
             self.handle_voice_input(audio_file_path),
             self.loop
         )
 
-    async def handle_voice_input(self, audio_file_path):
+    async def handle_voice_input(self, audio_file_path: str) -> None:
         try:
             if not os.path.exists(audio_file_path):
                 raise Exception("음성 파일이 생성되지 않았습니다.")
@@ -548,7 +553,7 @@ class AIChatGUI(QMainWindow):
             self.update_status("Status: Recognizing voice...", "#2980b9")
             logger.info("Speech-to-Text 변환 시작")
 
-            user_text = await self.stt_manager.transcribe_audio(audio_file_path)
+            user_text: str = await self.stt_manager.transcribe_audio(audio_file_path)
 
             if not user_text:
                 logger.info("음성 인식 실패, 사용자에게 다시 요청.")
@@ -565,21 +570,21 @@ class AIChatGUI(QMainWindow):
             self.update_status("Status: Waiting", "#27ae60")
             logger.error(f"음성 입력 처리 중 오류: {e}")
 
-    def process_ai_response(self, user_input):
+    def process_ai_response(self, user_input: str) -> None:
         asyncio.run_coroutine_threadsafe(
             self.get_and_display_response(user_input),
             self.loop
         )
 
-    async def get_and_display_response(self, user_input):
+    async def get_and_display_response(self, user_input: str) -> None:
         try:
-            ai_response = ""
-            headers = {
+            ai_response: str = ""
+            headers: dict[str, str] = {
                 "Content-Type": "application/json",
                 "Authorization": f"Bearer {API_KEY}"
             }
 
-            data = {
+            data: dict[str, Any] = {
                 "model": "gpt-4",
                 "messages": [
                     {
@@ -609,20 +614,20 @@ class AIChatGUI(QMainWindow):
                 OPENAI_API_URL, headers=headers, json=data
             ) as response:
                 if response.status != 200:
-                    error_info = await response.text()
+                    error_info: str = await response.text()
                     raise Exception(f"OpenAI API 오류 {response.status}: {error_info}")
 
                 async for line in response.content:
                     if line:
-                        decoded_line = line.decode('utf-8').strip()
+                        decoded_line: str = line.decode('utf-8').strip()
                         if decoded_line.startswith("data: "):
-                            data_str = decoded_line[len("data: "):]
+                            data_str: str = decoded_line[len("data: "):]
                             if data_str == "[DONE]":
                                 break
                             try:
-                                data_json = json.loads(data_str)
-                                delta = data_json.get('choices', [])[0].get('delta', {})
-                                content = delta.get('content', '')
+                                data_json: dict[str, Any] = json.loads(data_str)
+                                delta: dict[str, Any] = data_json.get('choices', [])[0].get('delta', {})
+                                content: str = delta.get('content', '')
                                 if content:
                                     ai_response += content
                             except Exception as e:
@@ -640,35 +645,35 @@ class AIChatGUI(QMainWindow):
             logger.error(f"AI 응답 가져오는 중 오류: {e}")
             self.update_status("Status: Waiting", "#27ae60")
 
-    def append_ai_message(self, message):
+    def append_ai_message(self, message: str) -> None:
         self.display_message("AI", message)
 
-    def display_message(self, sender, message):
-        sender_style = f"<span style='color:#2c3e50; font-weight:bold;'>{sender}: </span>"
-        message_style = f"<span style='color:#2c3e50;'>{message}</span>"
+    def display_message(self, sender: str, message: str) -> None:
+        sender_style: str = f"<span style='color:#2c3e50; font-weight:bold;'>{sender}: </span>"
+        message_style: str = f"<span style='color:#2c3e50;'>{message}</span>"
         self.chat_area.append(f"{sender_style}{message_style}<br>")
         self.chat_area.verticalScrollBar().setValue(
             self.chat_area.verticalScrollBar().maximum()
         )
 
-    def update_status(self, text, color):
+    def update_status(self, text: str, color: str) -> None:
         self.status_label.setText(text)
         self.status_label.setStyleSheet(f"color: {color};")
 
-    def stop_sound_effect(self):
+    def stop_sound_effect(self) -> None:
         with self.tts_manager.play_obj_lock:
             if self.tts_manager.current_play_obj and self.tts_manager.current_play_obj.is_playing():
                 self.tts_manager.current_play_obj.stop()
                 self.tts_manager.current_play_obj = None
                 logger.info("효과음 재생 중지됨.")
 
-    def stop(self):
+    def stop(self) -> None:
         try:
             self.speech_queue.put(None)
             self.speech_thread.join()
             self.stop_sound_effect()
 
-            close_future = asyncio.run_coroutine_threadsafe(
+            close_future: asyncio.Future = asyncio.run_coroutine_threadsafe(
                 self.aiohttp_session.close(),
                 self.loop
             )
@@ -683,20 +688,20 @@ class AIChatGUI(QMainWindow):
         except Exception as e:
             logger.error(f"stop 메서드에서 오류 발생: {e}")
 
-    def closeEvent(self, event):
+    def closeEvent(self, event: Any) -> None:
         self.stop()
         event.accept()
 
 
-def main():
-    def exception_hook(exctype, value, tb):
+def main() -> None:
+    def exception_hook(exctype: type, value: BaseException, tb: Any) -> None:
         logger.error("Uncaught exception", exc_info=(exctype, value, tb))
         sys.__excepthook__(exctype, value, tb)
 
     sys.excepthook = exception_hook
 
-    app = QApplication(sys.argv)
-    gui = AIChatGUI()
+    app: QApplication = QApplication(sys.argv)
+    gui: AIChatGUI = AIChatGUI()
     sys.exit(app.exec())
 
 
