@@ -198,5 +198,4 @@ This project is licensed under the [MIT License](LICENSE).
 For any questions or support, please contact:
 
 - **Author:** Ach08
-- **Email:** ach0836@example.com
 - **GitHub:** [ach0836](https://github.com/ach0836)
