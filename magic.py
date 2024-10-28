@@ -33,6 +33,7 @@ else:
 
 from logging.handlers import RotatingFileHandler
 
+# 로깅 설정
 logger = logging.getLogger()
 logger.setLevel(logging.DEBUG)
 
@@ -49,6 +50,7 @@ stream_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(stream_handler)
 
+# 환경 변수 로드
 load_dotenv()
 
 API_KEY: str = os.getenv("OPENAI_API_KEY") or ""
@@ -70,6 +72,7 @@ class WorkerSignals(QObject):
     start_tts_image: pyqtSignal = pyqtSignal()
     stop_tts_image: pyqtSignal = pyqtSignal()
     button_pressed: pyqtSignal = pyqtSignal()
+    gpio_button_pressed: pyqtSignal = pyqtSignal()  # [변경] GPIO 전용 신호 추가
 
 
 class TTSManager:
@@ -194,11 +197,18 @@ class AIChatGUI(QMainWindow):
         self.speech_thread.start()
 
         self.signals: WorkerSignals = WorkerSignals()
+
+        # 기존 신호 연결 제거
+        # self.signals.button_pressed.connect(self.send_message)
+
+        # GPIO 전용 신호 연결 추가
+        self.signals.gpio_button_pressed.connect(self.handle_gpio_button_pressed)
+
+        # 기타 신호 연결 유지
         self.signals.message.connect(self.append_ai_message)
         self.signals.start_processing_image.connect(self.start_processing_image_slot)
         self.signals.start_tts_image.connect(self.start_tts_image_slot)
         self.signals.stop_tts_image.connect(self.stop_tts_image_slot)
-        self.signals.button_pressed.connect(self.send_message)
 
         self.tts_manager: TTSManager = TTSManager(self.tts_client, self.signals)
         self.stt_manager: STTManager = STTManager(self.stt_client)
@@ -225,7 +235,7 @@ class AIChatGUI(QMainWindow):
 
     def on_button_pressed(self) -> None:
         logger.info("GPIO 버튼이 눌렸습니다.")
-        self.signals.button_pressed.emit()
+        self.signals.gpio_button_pressed.emit()  # [변경] gpio_button_pressed 신호 emit
 
     def start_loop(self) -> None:
         asyncio.set_event_loop(self.loop)
@@ -691,6 +701,15 @@ class AIChatGUI(QMainWindow):
     def closeEvent(self, event: Any) -> None:
         self.stop()
         event.accept()
+
+    # [변경] GPIO 버튼 전용 슬롯 메서드 추가
+    def handle_gpio_button_pressed(self) -> None:
+        """
+        GPIO 버튼이 눌렸을 때 호출되는 메서드.
+        예시로 음성 녹음을 시작하도록 설정.
+        """
+        logger.info("GPIO 버튼을 통한 음성 녹음 시작 요청.")
+        self.start_recording()
 
 
 def main() -> None:
