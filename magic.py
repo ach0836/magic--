@@ -26,8 +26,13 @@ from PyQt6.QtWidgets import (
 from PyQt6.QtGui import QPixmap, QImage, QFont, QIcon, QMovie
 from PyQt6.QtCore import Qt, pyqtSignal, QObject
 
+# GPIO 모듈 로드 (라즈베리 파이에서만)
 if platform.system() == "Linux":
-    from gpiozero import Button
+    try:
+        from gpiozero import Button
+    except ImportError:
+        Button = None
+        print("gpiozero 패키지가 설치되지 않았습니다. 'pip install gpiozero'를 실행하세요.")
 else:
     Button = None
 
@@ -71,8 +76,6 @@ class WorkerSignals(QObject):
     start_processing_image: pyqtSignal = pyqtSignal()
     start_tts_image: pyqtSignal = pyqtSignal()
     stop_tts_image: pyqtSignal = pyqtSignal()
-    button_pressed: pyqtSignal = pyqtSignal()
-    gpio_button_pressed: pyqtSignal = pyqtSignal()  # [변경] GPIO 전용 신호 추가
 
 
 class TTSManager:
@@ -198,13 +201,7 @@ class AIChatGUI(QMainWindow):
 
         self.signals: WorkerSignals = WorkerSignals()
 
-        # 기존 신호 연결 제거
-        # self.signals.button_pressed.connect(self.send_message)
-
-        # GPIO 전용 신호 연결 추가
-        self.signals.gpio_button_pressed.connect(self.handle_gpio_button_pressed)
-
-        # 기타 신호 연결 유지
+        # 신호 연결
         self.signals.message.connect(self.append_ai_message)
         self.signals.start_processing_image.connect(self.start_processing_image_slot)
         self.signals.start_tts_image.connect(self.start_tts_image_slot)
@@ -226,16 +223,14 @@ class AIChatGUI(QMainWindow):
         if Button is not None:
             try:
                 self.button = Button(17)
-                self.button.when_pressed = self.on_button_pressed
+                # 버튼을 누를 때 녹음 시작, 놓을 때 녹음 중지
+                self.button.when_pressed = self.start_recording
+                self.button.when_released = self.stop_recording
                 logger.info("GPIO 버튼 설정 완료.")
             except Exception as e:
                 logger.error(f"GPIO 설정 오류: {e}")
         else:
             logger.info("현재 운영체제에서는 GPIO를 지원하지 않습니다.")
-
-    def on_button_pressed(self) -> None:
-        logger.info("GPIO 버튼이 눌렸습니다.")
-        self.signals.gpio_button_pressed.emit()  # [변경] gpio_button_pressed 신호 emit
 
     def start_loop(self) -> None:
         asyncio.set_event_loop(self.loop)
@@ -483,6 +478,7 @@ class AIChatGUI(QMainWindow):
             logger.error(f"send_message 메서드에서 오류 발생: {e}")
 
     def start_recording(self) -> None:
+        """음성 녹음 시작"""
         try:
             if not self.recording:
                 self.recording = True
@@ -496,6 +492,7 @@ class AIChatGUI(QMainWindow):
             logger.error(f"start_recording 메서드에서 오류 발생: {e}")
 
     def stop_recording(self) -> None:
+        """음성 녹음 중지"""
         try:
             if self.recording:
                 self.recording = False
@@ -521,6 +518,7 @@ class AIChatGUI(QMainWindow):
             logger.error(f"stop_recording 메서드에서 오류 발생: {e}")
 
     def record_audio(self) -> None:
+        """음성 녹음 스레드"""
         chunk_size: int = 1024
         sample_format: int = pyaudio.paInt16
         channels: int = 1
@@ -547,12 +545,14 @@ class AIChatGUI(QMainWindow):
             audio_interface.terminate()
 
     def process_voice_input(self, audio_file_path: str) -> None:
+        """음성 입력 처리"""
         asyncio.run_coroutine_threadsafe(
             self.handle_voice_input(audio_file_path),
             self.loop
         )
 
     async def handle_voice_input(self, audio_file_path: str) -> None:
+        """음성 파일을 텍스트로 변환하고 AI 응답 처리"""
         try:
             if not os.path.exists(audio_file_path):
                 raise Exception("음성 파일이 생성되지 않았습니다.")
@@ -581,12 +581,14 @@ class AIChatGUI(QMainWindow):
             logger.error(f"음성 입력 처리 중 오류: {e}")
 
     def process_ai_response(self, user_input: str) -> None:
+        """AI 응답 처리"""
         asyncio.run_coroutine_threadsafe(
             self.get_and_display_response(user_input),
             self.loop
         )
 
     async def get_and_display_response(self, user_input: str) -> None:
+        """OpenAI API를 사용하여 AI 응답을 가져오고 표시"""
         try:
             ai_response: str = ""
             headers: dict[str, str] = {
@@ -702,7 +704,29 @@ class AIChatGUI(QMainWindow):
         self.stop()
         event.accept()
 
-    # [변경] GPIO 버튼 전용 슬롯 메서드 추가
+    def speech_worker(self) -> None:
+        while True:
+            item: Optional[str] = self.speech_queue.get()
+            if item is None:
+                break
+            try:
+                if item == "__PLAY_SOUND_EFFECT__":
+                    if self.sound_effect:
+                        play_obj: sa.PlayObject = self.sound_effect.play()
+                        logger.info("효과음 재생 시작.")
+                        play_obj.wait_done()
+                        logger.info("효과음 재생 완료.")
+                else:
+                    self.signals.start_tts_image.emit()
+                    asyncio.run_coroutine_threadsafe(
+                        self.tts_manager.synthesize_and_play(item),
+                        self.loop
+                    )
+            except Exception as e:
+                logger.error(f"TTS 재생 중 오류: {e}")
+            finally:
+                self.speech_queue.task_done()
+
     def handle_gpio_button_pressed(self) -> None:
         """
         GPIO 버튼이 눌렸을 때 호출되는 메서드.
